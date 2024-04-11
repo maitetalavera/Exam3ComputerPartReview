@@ -66,3 +66,51 @@ import tkinter as tk
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
 
+
+window=tk.Tk()
+window.title("Phone")
+
+lbl_number=tk.Label(master=window, text="")
+lbl_number.pack()
+
+frame_a=tk.Frame(master=window)
+frame_a.rowconfigure([0,1,2,3], weight=1, minsize=50)
+frame_a.columnconfigure([0,1,2], weight=1, minsize=50)
+frame_a.pack()
+
+def handler_1():
+    lbl_number['text']=lbl_number['text']+"1"
+
+def handler_2():
+    lbl_number['text']=lbl_number['text']+"2"
+
+def handler_3():
+    lbl_number['text']=lbl_number['text']+"3"
+
+def handler_4():
+    lbl_number['text']=lbl_number['text']+"4"
+def handler_clear():
+    lbl_number['text'] = ""
+
+def handler_call():
+    if len(lbl_number["text"])==10:
+        print(f"calling {lbl_number['text']}")
+    else:
+        print("invalid number ")
+
+
+btn1= tk.Button(master=frame_a, text="1", comman=handler_1)
+
+
+btn1.grid(row=0, column=0, stickey="nsew")
+btn_clear.grid(row=3, column=0, stickey="nsew")
+btn_call.grid()
+
+def handle_keypress(event):
+    if event.keysym.isdigit():
+        lbl_number['text']=lbl_number['text']+event.keysym
+
+window.bind("<Key>", handle_keypress)
+window.mainloop()
+
+

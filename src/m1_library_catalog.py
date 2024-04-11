@@ -29,6 +29,13 @@
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
 
+def print_books(books):
+    print("\nbooks:")
+    for book in books:
+        if book ["checked out"] == False:
+            print(f'"ISBN')
+        
+
 ###############################################################################
 # TODO: 2.
 #
@@ -47,6 +54,14 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+
+def checkout(book):
+    if book["checked_out"] == False:
+        book["checkedout]"] = True
+        print()
+
+    else:
+        print()
 
 ###############################################################################
 # TODO: 3.
@@ -78,3 +93,29 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+
+def main():
+    print("Welcome")
+   
+    books = []
+
+    while True :
+        isbn = input ("Please enter")
+        if isbn == "end" : break 
+        title = input ("Please enter")
+        if title == "end" : break 
+        author = input ("Please enter")
+        if author == "end" : break 
+        publisher = input ("Please enter")
+        if publisher == "end" : break 
+
+        book = {
+            "isbn" : isbn, 
+            "title": title,
+            "author":author,
+        }
+        books.appen(book)
+    print_books(books)
+        while Truee: 
+            checkout_entry = input("which book")
+            if checkout_entry == "end":break
